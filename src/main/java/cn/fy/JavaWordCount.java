@@ -39,8 +39,8 @@ public class JavaWordCount {
 
 		SparkSession spark = SparkSession.builder()
 				.appName("JavaWordCount")
-				.master("local[*]")
-				//.master("spark://172.16.1.81:7077")
+				//.master("local[*]")
+				.master("spark://cdhserver:7077")
 				.getOrCreate();
 
 		JavaRDD<String> lines = spark.read().textFile(args[0]).javaRDD();

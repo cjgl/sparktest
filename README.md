@@ -1,5 +1,4 @@
 # spark-shell
-	spark
 	val textFile = sc.textFile("file:///tmp/a.txt");
 	textFile.first();
 	textFile.count();
@@ -7,7 +6,6 @@
 	val textFilter = textFile.filter(line=>line.contains("Spark"));
 	textFile.filter(line=>line.contains("Spark")).count();
 	
-	val textFile1 = sc.textFile("hdfs:///172.16.1.81:8020/test/input");
 	val textFile1 = sc.textFile("hdfsInput");
 	val wordCount = textFile1.flatMap(line =>line.split(" ")).map(x => (x,1)).reduceByKey((a,b) => a+b);
 	wordCount.collect
